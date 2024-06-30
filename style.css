@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+
+  font: inherit;
+  font-size: 24px;
+  font-family: "Open Sans", sans-serif;
+
+  background: #222;
+  background-image: url("./src/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease, color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background: #444;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.card {
+  background: #000000d0;
+  color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.search {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+input.search-bar {
+  flex: auto 1 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+
+  font-family: inherit;
+  font-size: 105%;
+
+  color: white;
+  background: #7c7c7c2b;
+}
+
+button {
+  height: 54.55px;
+  width: 74.55px;
+
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  border-radius: 100%;
+
+  background: #7c7c7c2b;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #7c7c7c6b;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading:after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forecast-day {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "date icon"
+    "description temp";
+  align-items: center;
+
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.forecast-day-date {
+  grid-area: date;
+}
+
+.forecast-day-icon {
+  grid-area: icon;
+}
+
+.forecast-day-description {
+  grid-area: description;
+}
+
+.forecast-day-temp {
+  grid-area: temp;
+}
+
+.forecast-day-icon,
+.forecast-day-temp {
+  margin-left: auto;
+}
+
+.forecast-day img {
+  height: 40px;
+}
+
+.forecast-day p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about-us {
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.816);
+  color: white;
+}
+
+.team-members h3,
+.team-members p {
+  overflow-wrap: break-word;
+}
+
+.contact {
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.816);
+  color: white;
+}
+
+.welcome h1 {
+  margin: 0;
+}
+.welcome p {
+  margin: 1rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form input {
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.form textarea {
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.form .submit {
+  padding: 0.75rem;
+  margin-left: auto;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff8a00 0%, #e52e71 100%);
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+  }
+  .forecast-day {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "date description icon temp";
+  }
+
+  .forecast-day-icon,
+  .forecast-day-temp {
+    margin-left: 0;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .column.left {
+    flex: 2;
+  }
+
+  .column.right {
+    flex: 1;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+}
