@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="../src/images/whiteLogo3.png"
+          alt="App Logo"
+          class="app-logo"
+        />
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="#Contact Us">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="contact">
+      <div class="welcome">
+        <h1>Contact Us</h1>
+        <p>Send a message to the Admins</p>
+      </div>
+
+      <form id="contactForm" class="form">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your Email"
+          required
+        />
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="Subject"
+          required
+        />
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Message"
+          required
+        ></textarea>
+        <div class="my-3">
+          <div id="loading" class="loading" style="display: none">Loading</div>
+          <div
+            id="error-message"
+            class="error-message"
+            style="display: none"
+          ></div>
+          <div id="sent-message" class="sent-message" style="display: none">
+            Your message has been sent. Thank you!
+          </div>
+        </div>
+        <button class="submit" type="submit">Send Message</button>
+      </form>
+    </section>
+    <script src="../main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </body>
+</html>
